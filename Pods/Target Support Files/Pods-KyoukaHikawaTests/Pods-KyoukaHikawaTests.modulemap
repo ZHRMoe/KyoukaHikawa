@@ -1,0 +1,6 @@
+framework module Pods_KyoukaHikawaTests {
+  umbrella header "Pods-KyoukaHikawaTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
