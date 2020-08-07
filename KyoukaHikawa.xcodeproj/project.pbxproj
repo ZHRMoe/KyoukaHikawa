@@ -16,6 +16,7 @@
 		53DFD2E724D331B9006D5690 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53DFD2E524D331B9006D5690 /* LaunchScreen.storyboard */; };
 		53DFD2F224D331B9006D5690 /* KyoukaHikawaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53DFD2F124D331B9006D5690 /* KyoukaHikawaTests.swift */; };
 		53DFD2FD24D331B9006D5690 /* KyoukaHikawaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53DFD2FC24D331B9006D5690 /* KyoukaHikawaUITests.swift */; };
+		53F82C1124DD36A2005326B1 /* KHClanInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F82C1024DD36A2005326B1 /* KHClanInfo.swift */; };
 		90F5BAA5B3DEBC3DC5EBB9B2 /* Pods_KyoukaHikawaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BAB97C93F773F2FF6F6A518 /* Pods_KyoukaHikawaTests.framework */; };
 		9202AA9793BB8BBB8C431F95 /* Pods_KyoukaHikawa_KyoukaHikawaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C803E0B2A601EAD185CB0293 /* Pods_KyoukaHikawa_KyoukaHikawaUITests.framework */; };
 		B3B7D1BE2B6291F6D4BD3241 /* Pods_KyoukaHikawa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F727AA6CD02460C23F41B691 /* Pods_KyoukaHikawa.framework */; };
@@ -58,6 +59,8 @@
 		53DFD2F824D331B9006D5690 /* KyoukaHikawaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KyoukaHikawaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		53DFD2FC24D331B9006D5690 /* KyoukaHikawaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KyoukaHikawaUITests.swift; sourceTree = "<group>"; };
 		53DFD2FE24D331B9006D5690 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		53F82C1024DD36A2005326B1 /* KHClanInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KHClanInfo.swift; sourceTree = "<group>"; };
+		53F82C1224DD3AB4005326B1 /* KyoukaHikawa-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KyoukaHikawa-Bridging-Header.h"; sourceTree = "<group>"; };
 		56C2E1EFAB7564295495CFFA /* Pods-KyoukaHikawa-KyoukaHikawaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KyoukaHikawa-KyoukaHikawaUITests.debug.xcconfig"; path = "Target Support Files/Pods-KyoukaHikawa-KyoukaHikawaUITests/Pods-KyoukaHikawa-KyoukaHikawaUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		9DDDA924CCA7DA251013E5D0 /* Pods-KyoukaHikawaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KyoukaHikawaTests.debug.xcconfig"; path = "Target Support Files/Pods-KyoukaHikawaTests/Pods-KyoukaHikawaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B8105702B42C311B8AF4DCF4 /* Pods-KyoukaHikawaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KyoukaHikawaTests.release.xcconfig"; path = "Target Support Files/Pods-KyoukaHikawaTests/Pods-KyoukaHikawaTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -136,6 +139,8 @@
 				53DFD2E524D331B9006D5690 /* LaunchScreen.storyboard */,
 				53DFD2E824D331B9006D5690 /* Info.plist */,
 				5316291224D3328F00F849F4 /* KHNetwork.swift */,
+				53F82C1024DD36A2005326B1 /* KHClanInfo.swift */,
+				53F82C1224DD3AB4005326B1 /* KyoukaHikawa-Bridging-Header.h */,
 			);
 			path = KyoukaHikawa;
 			sourceTree = "<group>";
@@ -243,6 +248,7 @@
 				TargetAttributes = {
 					53DFD2D624D331B8006D5690 = {
 						CreatedOnToolsVersion = 12.0;
+						LastSwiftMigration = 1160;
 					};
 					53DFD2EC24D331B9006D5690 = {
 						CreatedOnToolsVersion = 12.0;
@@ -410,6 +416,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				53DFD2DF24D331B8006D5690 /* ViewController.swift in Sources */,
+				53F82C1124DD36A2005326B1 /* KHClanInfo.swift in Sources */,
 				53DFD2DB24D331B8006D5690 /* AppDelegate.swift in Sources */,
 				53DFD2DD24D331B8006D5690 /* SceneDelegate.swift in Sources */,
 				5316291324D3328F00F849F4 /* KHNetwork.swift in Sources */,
@@ -589,6 +596,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XML8ZYMQJL;
 				INFOPLIST_FILE = KyoukaHikawa/Info.plist;
@@ -599,6 +607,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = moe.zhr.KyoukaHikawa;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "KyoukaHikawa/KyoukaHikawa-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -610,6 +620,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XML8ZYMQJL;
 				INFOPLIST_FILE = KyoukaHikawa/Info.plist;
@@ -620,6 +631,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = moe.zhr.KyoukaHikawa;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "KyoukaHikawa/KyoukaHikawa-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

@@ -1,2 +1,4 @@
 ${PODS_ROOT}/Target Support Files/Pods-KyoukaHikawa-KyoukaHikawaUITests/Pods-KyoukaHikawa-KyoukaHikawaUITests-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
+${BUILT_PRODUCTS_DIR}/MJExtension/MJExtension.framework
+${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework

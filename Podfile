@@ -7,6 +7,8 @@ target 'KyoukaHikawa' do
 
   # Pods for KyoukaHikawa
   pod 'Alamofire', '~> 5.2'
+  pod 'SwiftyJSON', '~> 4.0'
+  pod 'MJExtension'
   target 'KyoukaHikawaTests' do
     inherit! :search_paths
     # Pods for testing
