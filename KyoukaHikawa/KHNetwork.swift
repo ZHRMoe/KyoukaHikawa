@@ -7,6 +7,7 @@
 
 import Foundation
 import Alamofire
+import SwiftyJSON
 
 class KHNetwork: NSObject {
     
@@ -35,9 +36,10 @@ class KHNetwork: NSObject {
         
         AF.request(request).responseJSON { (responce) in
             if responce.value != nil {
-                print(responce.value)
+                let resultJson = JSON.init(responce.value as Any)
+                KHClanInfoManager.processSingleClanInfo(json: resultJson)
             } else {
-                print(responce.error)
+                
             }
         }
     }
