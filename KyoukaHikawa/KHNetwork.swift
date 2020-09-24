@@ -23,9 +23,30 @@ class KHNetwork: NSObject {
         return _request
     }
     
-    func requestDataAtRanking(_ ranking: Int, history: Int) {
+    func requestDataAtRanking(_ ranking: Int, history: Int = 0) {
         let urlString = "https://service-kjcbcnmw-1254119946.gz.apigw.tencentcs.com//rank/\(ranking)"
         let json = "{\"history\":\(history)}"
+        let url = URL(string: urlString)!
+        let jsonData = json.data(using: .utf8, allowLossyConversion: false)!
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = HTTPMethod.post.rawValue
+        request = self.configRequestHeader(request: request)
+        request.httpBody = jsonData
+        
+        AF.request(request).responseJSON { (responce) in
+            if responce.value != nil {
+                let resultJson = JSON.init(responce.value as Any)
+                KHClanInfoManager.processSingleClanInfo(json: resultJson)
+            } else {
+                
+            }
+        }
+    }
+    
+    func requestDataFromClanName(_ name: String, history: Int = 0) {
+        let urlString = "https://service-kjcbcnmw-1254119946.gz.apigw.tencentcs.com//name/0"
+        let json = "{\"history\":\(history),\"clanName\":\"\(name)\"}"
         let url = URL(string: urlString)!
         let jsonData = json.data(using: .utf8, allowLossyConversion: false)!
         

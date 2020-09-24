@@ -8,14 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		5316291324D3328F00F849F4 /* KHNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5316291224D3328F00F849F4 /* KHNetwork.swift */; };
+		5346FA7F251B0D0300E69075 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5346FA7E251B0D0300E69075 /* WidgetKit.framework */; };
+		5346FA81251B0D0300E69075 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5346FA80251B0D0300E69075 /* SwiftUI.framework */; };
+		5346FA84251B0D0300E69075 /* KyoukaExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5346FA83251B0D0300E69075 /* KyoukaExtension.swift */; };
+		5346FA87251B0D0400E69075 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5346FA86251B0D0400E69075 /* Assets.xcassets */; };
+		5346FA89251B0D0400E69075 /* KyoukaExtension.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 5346FA85251B0D0300E69075 /* KyoukaExtension.intentdefinition */; };
+		5346FA8A251B0D0400E69075 /* KyoukaExtension.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 5346FA85251B0D0300E69075 /* KyoukaExtension.intentdefinition */; };
+		5346FA8D251B0D0400E69075 /* KyoukaExtensionExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 5346FA7D251B0D0300E69075 /* KyoukaExtensionExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		53DFD2DB24D331B8006D5690 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53DFD2DA24D331B8006D5690 /* AppDelegate.swift */; };
 		53DFD2DD24D331B8006D5690 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53DFD2DC24D331B8006D5690 /* SceneDelegate.swift */; };
 		53DFD2DF24D331B8006D5690 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53DFD2DE24D331B8006D5690 /* ViewController.swift */; };
 		53DFD2E224D331B8006D5690 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53DFD2E024D331B8006D5690 /* Main.storyboard */; };
 		53DFD2E424D331B9006D5690 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53DFD2E324D331B9006D5690 /* Assets.xcassets */; };
 		53DFD2E724D331B9006D5690 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53DFD2E524D331B9006D5690 /* LaunchScreen.storyboard */; };
-		53DFD2F224D331B9006D5690 /* KyoukaHikawaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53DFD2F124D331B9006D5690 /* KyoukaHikawaTests.swift */; };
-		53DFD2FD24D331B9006D5690 /* KyoukaHikawaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53DFD2FC24D331B9006D5690 /* KyoukaHikawaUITests.swift */; };
 		53F82C1124DD36A2005326B1 /* KHClanInfoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F82C1024DD36A2005326B1 /* KHClanInfoManager.swift */; };
 		90F5BAA5B3DEBC3DC5EBB9B2 /* Pods_KyoukaHikawaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BAB97C93F773F2FF6F6A518 /* Pods_KyoukaHikawaTests.framework */; };
 		9202AA9793BB8BBB8C431F95 /* Pods_KyoukaHikawa_KyoukaHikawaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C803E0B2A601EAD185CB0293 /* Pods_KyoukaHikawa_KyoukaHikawaUITests.framework */; };
@@ -23,6 +28,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		5346FA8B251B0D0400E69075 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 53DFD2CF24D331B8006D5690 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5346FA7C251B0D0300E69075;
+			remoteInfo = KyoukaExtensionExtension;
+		};
 		53DFD2EE24D331B9006D5690 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 53DFD2CF24D331B8006D5690 /* Project object */;
@@ -39,12 +51,33 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		5346FA8E251B0D0400E69075 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				5346FA8D251B0D0400E69075 /* KyoukaExtensionExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		0306BF711B240A41A1D3C278 /* Pods-KyoukaHikawa.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KyoukaHikawa.debug.xcconfig"; path = "Target Support Files/Pods-KyoukaHikawa/Pods-KyoukaHikawa.debug.xcconfig"; sourceTree = "<group>"; };
 		0BAB97C93F773F2FF6F6A518 /* Pods_KyoukaHikawaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KyoukaHikawaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		133C12067DD29C6231BCBCF3 /* Pods-KyoukaHikawa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KyoukaHikawa.release.xcconfig"; path = "Target Support Files/Pods-KyoukaHikawa/Pods-KyoukaHikawa.release.xcconfig"; sourceTree = "<group>"; };
 		1C403B2B139BDEDE33ADF242 /* Pods-KyoukaHikawa-KyoukaHikawaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KyoukaHikawa-KyoukaHikawaUITests.release.xcconfig"; path = "Target Support Files/Pods-KyoukaHikawa-KyoukaHikawaUITests/Pods-KyoukaHikawa-KyoukaHikawaUITests.release.xcconfig"; sourceTree = "<group>"; };
 		5316291224D3328F00F849F4 /* KHNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KHNetwork.swift; sourceTree = "<group>"; };
+		5346FA7D251B0D0300E69075 /* KyoukaExtensionExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = KyoukaExtensionExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		5346FA7E251B0D0300E69075 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		5346FA80251B0D0300E69075 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		5346FA83251B0D0300E69075 /* KyoukaExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KyoukaExtension.swift; sourceTree = "<group>"; };
+		5346FA85251B0D0300E69075 /* KyoukaExtension.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = KyoukaExtension.intentdefinition; sourceTree = "<group>"; };
+		5346FA86251B0D0400E69075 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5346FA88251B0D0400E69075 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		53DFD2D724D331B8006D5690 /* KyoukaHikawa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KyoukaHikawa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		53DFD2DA24D331B8006D5690 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		53DFD2DC24D331B8006D5690 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -54,11 +87,7 @@
 		53DFD2E624D331B9006D5690 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		53DFD2E824D331B9006D5690 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		53DFD2ED24D331B9006D5690 /* KyoukaHikawaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KyoukaHikawaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		53DFD2F124D331B9006D5690 /* KyoukaHikawaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KyoukaHikawaTests.swift; sourceTree = "<group>"; };
-		53DFD2F324D331B9006D5690 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		53DFD2F824D331B9006D5690 /* KyoukaHikawaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KyoukaHikawaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		53DFD2FC24D331B9006D5690 /* KyoukaHikawaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KyoukaHikawaUITests.swift; sourceTree = "<group>"; };
-		53DFD2FE24D331B9006D5690 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		53F82C1024DD36A2005326B1 /* KHClanInfoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KHClanInfoManager.swift; sourceTree = "<group>"; };
 		53F82C1224DD3AB4005326B1 /* KyoukaHikawa-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KyoukaHikawa-Bridging-Header.h"; sourceTree = "<group>"; };
 		56C2E1EFAB7564295495CFFA /* Pods-KyoukaHikawa-KyoukaHikawaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KyoukaHikawa-KyoukaHikawaUITests.debug.xcconfig"; path = "Target Support Files/Pods-KyoukaHikawa-KyoukaHikawaUITests/Pods-KyoukaHikawa-KyoukaHikawaUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -69,6 +98,15 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		5346FA7A251B0D0300E69075 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5346FA81251B0D0300E69075 /* SwiftUI.framework in Frameworks */,
+				5346FA7F251B0D0300E69075 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		53DFD2D424D331B8006D5690 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -102,16 +140,28 @@
 				F727AA6CD02460C23F41B691 /* Pods_KyoukaHikawa.framework */,
 				C803E0B2A601EAD185CB0293 /* Pods_KyoukaHikawa_KyoukaHikawaUITests.framework */,
 				0BAB97C93F773F2FF6F6A518 /* Pods_KyoukaHikawaTests.framework */,
+				5346FA7E251B0D0300E69075 /* WidgetKit.framework */,
+				5346FA80251B0D0300E69075 /* SwiftUI.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5346FA82251B0D0300E69075 /* KyoukaExtension */ = {
+			isa = PBXGroup;
+			children = (
+				5346FA83251B0D0300E69075 /* KyoukaExtension.swift */,
+				5346FA85251B0D0300E69075 /* KyoukaExtension.intentdefinition */,
+				5346FA86251B0D0400E69075 /* Assets.xcassets */,
+				5346FA88251B0D0400E69075 /* Info.plist */,
+			);
+			path = KyoukaExtension;
 			sourceTree = "<group>";
 		};
 		53DFD2CE24D331B8006D5690 = {
 			isa = PBXGroup;
 			children = (
 				53DFD2D924D331B8006D5690 /* KyoukaHikawa */,
-				53DFD2F024D331B9006D5690 /* KyoukaHikawaTests */,
-				53DFD2FB24D331B9006D5690 /* KyoukaHikawaUITests */,
+				5346FA82251B0D0300E69075 /* KyoukaExtension */,
 				53DFD2D824D331B8006D5690 /* Products */,
 				CA28FD2B7147A3385CBAC1F5 /* Pods */,
 				36626D8D75C17E34D7EAFF0C /* Frameworks */,
@@ -124,6 +174,7 @@
 				53DFD2D724D331B8006D5690 /* KyoukaHikawa.app */,
 				53DFD2ED24D331B9006D5690 /* KyoukaHikawaTests.xctest */,
 				53DFD2F824D331B9006D5690 /* KyoukaHikawaUITests.xctest */,
+				5346FA7D251B0D0300E69075 /* KyoukaExtensionExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -145,24 +196,6 @@
 			path = KyoukaHikawa;
 			sourceTree = "<group>";
 		};
-		53DFD2F024D331B9006D5690 /* KyoukaHikawaTests */ = {
-			isa = PBXGroup;
-			children = (
-				53DFD2F124D331B9006D5690 /* KyoukaHikawaTests.swift */,
-				53DFD2F324D331B9006D5690 /* Info.plist */,
-			);
-			path = KyoukaHikawaTests;
-			sourceTree = "<group>";
-		};
-		53DFD2FB24D331B9006D5690 /* KyoukaHikawaUITests */ = {
-			isa = PBXGroup;
-			children = (
-				53DFD2FC24D331B9006D5690 /* KyoukaHikawaUITests.swift */,
-				53DFD2FE24D331B9006D5690 /* Info.plist */,
-			);
-			path = KyoukaHikawaUITests;
-			sourceTree = "<group>";
-		};
 		CA28FD2B7147A3385CBAC1F5 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -179,6 +212,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		5346FA7C251B0D0300E69075 /* KyoukaExtensionExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5346FA91251B0D0400E69075 /* Build configuration list for PBXNativeTarget "KyoukaExtensionExtension" */;
+			buildPhases = (
+				5346FA79251B0D0300E69075 /* Sources */,
+				5346FA7A251B0D0300E69075 /* Frameworks */,
+				5346FA7B251B0D0300E69075 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KyoukaExtensionExtension;
+			productName = KyoukaExtensionExtension;
+			productReference = 5346FA7D251B0D0300E69075 /* KyoukaExtensionExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		53DFD2D624D331B8006D5690 /* KyoukaHikawa */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 53DFD30124D331B9006D5690 /* Build configuration list for PBXNativeTarget "KyoukaHikawa" */;
@@ -188,10 +238,12 @@
 				53DFD2D424D331B8006D5690 /* Frameworks */,
 				53DFD2D524D331B8006D5690 /* Resources */,
 				9B59DD05A35BE18B0E0563A1 /* [CP] Embed Pods Frameworks */,
+				5346FA8E251B0D0400E69075 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				5346FA8C251B0D0400E69075 /* PBXTargetDependency */,
 			);
 			name = KyoukaHikawa;
 			productName = KyoukaHikawa;
@@ -246,6 +298,9 @@
 				LastSwiftUpdateCheck = 1200;
 				LastUpgradeCheck = 1200;
 				TargetAttributes = {
+					5346FA7C251B0D0300E69075 = {
+						CreatedOnToolsVersion = 12.0;
+					};
 					53DFD2D624D331B8006D5690 = {
 						CreatedOnToolsVersion = 12.0;
 						LastSwiftMigration = 1160;
@@ -276,11 +331,20 @@
 				53DFD2D624D331B8006D5690 /* KyoukaHikawa */,
 				53DFD2EC24D331B9006D5690 /* KyoukaHikawaTests */,
 				53DFD2F724D331B9006D5690 /* KyoukaHikawaUITests */,
+				5346FA7C251B0D0300E69075 /* KyoukaExtensionExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		5346FA7B251B0D0300E69075 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5346FA87251B0D0400E69075 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		53DFD2D524D331B8006D5690 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -411,10 +475,20 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		5346FA79251B0D0300E69075 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5346FA89251B0D0400E69075 /* KyoukaExtension.intentdefinition in Sources */,
+				5346FA84251B0D0300E69075 /* KyoukaExtension.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		53DFD2D324D331B8006D5690 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5346FA8A251B0D0400E69075 /* KyoukaExtension.intentdefinition in Sources */,
 				53DFD2DF24D331B8006D5690 /* ViewController.swift in Sources */,
 				53F82C1124DD36A2005326B1 /* KHClanInfoManager.swift in Sources */,
 				53DFD2DB24D331B8006D5690 /* AppDelegate.swift in Sources */,
@@ -427,7 +501,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				53DFD2F224D331B9006D5690 /* KyoukaHikawaTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -435,13 +508,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				53DFD2FD24D331B9006D5690 /* KyoukaHikawaUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		5346FA8C251B0D0400E69075 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5346FA7C251B0D0300E69075 /* KyoukaExtensionExtension */;
+			targetProxy = 5346FA8B251B0D0400E69075 /* PBXContainerItemProxy */;
+		};
 		53DFD2EF24D331B9006D5690 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 53DFD2D624D331B8006D5690 /* KyoukaHikawa */;
@@ -474,6 +551,50 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		5346FA8F251B0D0400E69075 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XML8ZYMQJL;
+				INFOPLIST_FILE = KyoukaExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = moe.zhr.KyoukaHikawa.KyoukaExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5346FA90251B0D0400E69075 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XML8ZYMQJL;
+				INFOPLIST_FILE = KyoukaExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = moe.zhr.KyoukaHikawa.KyoukaExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		53DFD2FF24D331B9006D5690 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -594,6 +715,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0306BF711B240A41A1D3C278 /* Pods-KyoukaHikawa.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
@@ -618,6 +740,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 133C12067DD29C6231BCBCF3 /* Pods-KyoukaHikawa.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
@@ -730,6 +853,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		5346FA91251B0D0400E69075 /* Build configuration list for PBXNativeTarget "KyoukaExtensionExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5346FA8F251B0D0400E69075 /* Debug */,
+				5346FA90251B0D0400E69075 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		53DFD2D224D331B8006D5690 /* Build configuration list for PBXProject "KyoukaHikawa" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
