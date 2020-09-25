@@ -11,30 +11,34 @@ import Intents
 
 struct KyoukaServiceProvider: IntentTimelineProvider {
     
-    static var lastClanInfo = KyoukaClanInfo(clan_name: "", leader_name: "", leader_viewer_id: 0, damage: 0, rank: 0)
+    static var lastClanInfo: KyoukaClanInfo? = nil
+    static var lastError: Error? = nil
     
     func placeholder(in context: Context) -> KyoukaServiceEntry {
-        KyoukaServiceEntry(date: Date(), clanInfo: KyoukaServiceProvider.lastClanInfo)
+        KyoukaServiceEntry(date: Date(), clanInfo: KyoukaServiceProvider.lastClanInfo, error: KyoukaServiceProvider.lastError)
     }
 
     func getSnapshot(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (KyoukaServiceEntry) -> ()) {
-        let entry = KyoukaServiceEntry(date: Date(), clanInfo: KyoukaServiceProvider.lastClanInfo)
+        let entry = KyoukaServiceEntry(date: Date(), clanInfo: KyoukaServiceProvider.lastClanInfo, error: KyoukaServiceProvider.lastError)
         completion(entry)
     }
 
     func getTimeline(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
         let curDate = Date()
-        let updateDate = Calendar.current.date(byAdding: .minute, value: 5, to: curDate)
-        KyoukaRequest.requestDataFromClanName("救赎蔷薇") { (result) in
-            var clanInfo: KyoukaClanInfo
+        var timeInterval: Int = 10
+        if let configurationTimeInterval = configuration.timeInterval as? Int {
+            timeInterval = configurationTimeInterval
+        }
+        let updateDate = Calendar.current.date(byAdding: .minute, value: timeInterval, to: curDate)
+        KyoukaRequest.requestDataFromClanName(configuration.clanName ?? "") { (result) in
             switch result {
             case .success(let info):
-                clanInfo = info
-            case .failure(_):
-                clanInfo = KyoukaClanInfo(clan_name: "", leader_name: "", leader_viewer_id: 0, damage: 0, rank: 0)
+                KyoukaServiceProvider.lastClanInfo = info
+                KyoukaServiceProvider.lastError = nil
+            case .failure(let error):
+                KyoukaServiceProvider.lastError = error
             }
-            KyoukaServiceProvider.lastClanInfo = clanInfo
-            let entry = KyoukaServiceEntry(date: updateDate!, clanInfo: clanInfo)
+            let entry = KyoukaServiceEntry(date: updateDate!, clanInfo: KyoukaServiceProvider.lastClanInfo, error: KyoukaServiceProvider.lastError)
             let timeline = Timeline(entries: [entry], policy: .after(updateDate!))
             completion(timeline)
         }
@@ -43,7 +47,8 @@ struct KyoukaServiceProvider: IntentTimelineProvider {
 
 struct KyoukaServiceEntry: TimelineEntry {
     let date: Date
-    let clanInfo: KyoukaClanInfo
+    let clanInfo: KyoukaClanInfo?
+    let error: Error?
 }
 
 struct KyoukaClanInfo {
@@ -80,22 +85,35 @@ struct KyoukaRequest {
                 completion(.failure(error!))
                 return
             }
-            let clanInfo = processSingleClanInfo(fromData: data!)
-            completion(.success(clanInfo))
+            let processResult = processSingleClanInfo(fromData: data!)
+            if processResult.0 != nil {
+                completion(.success(processResult.0!))
+            } else if processResult.1 != nil {
+                completion(.failure(processResult.1!))
+            } else {
+                completion(.success(KyoukaClanInfo()))
+            }
         }
         task.resume()
     }
     
-    static func processSingleClanInfo(fromData data: Data) -> KyoukaClanInfo {
-        let json = try! JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
-        guard let data = (json["data"] as? Array<[String: Any]>)?.first else { return KyoukaClanInfo(clan_name: "", leader_name: "", leader_viewer_id: 0, damage: 0, rank: 0)}
-        var info = KyoukaClanInfo()
-        info.clan_name = data["clan_name"] as? String
-        info.leader_name = data["leader_name"] as? String
-        info.leader_viewer_id = data["leader_viewer_id"] as? Int
-        info.damage = data["damage"] as? Int
-        info.rank = data["rank"] as? Int
-        return info
+    static func processSingleClanInfo(fromData data: Data) -> (KyoukaClanInfo?, Error?) {
+        do {
+            if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
+                guard let data = (json["data"] as? Array<[String: Any]>)?.first else { return (nil, nil)}
+                var info = KyoukaClanInfo()
+                info.clan_name = data["clan_name"] as? String
+                info.leader_name = data["leader_name"] as? String
+                info.leader_viewer_id = data["leader_viewer_id"] as? Int
+                info.damage = data["damage"] as? Int
+                info.rank = data["rank"] as? Int
+                return (info, nil)
+            } else {
+                return (nil, nil)
+            }
+        } catch let error {
+            return (nil, error)
+        }
     }
 }
 
@@ -105,19 +123,25 @@ struct KyoukaExtensionEntryView : View {
     @Environment(\.widgetFamily) var family: WidgetFamily
 
     var body: some View {
-        switch family {
-        case .systemSmall:
-            VStack(alignment: .leading, spacing: nil) {
-                Text("公会名: \(entry.clanInfo.clan_name ?? "")")
-                Text("伤害: \(entry.clanInfo.damage ?? 0)")
-                Text("排名: \(entry.clanInfo.rank ?? 0)")
+        if entry.clanInfo != nil {
+            switch family {
+            case .systemSmall:
+                VStack(alignment: .leading, spacing: nil) {
+                    Text("公会名: \(entry.clanInfo!.clan_name ?? "")")
+                    Text("伤害: \(entry.clanInfo!.damage ?? 0)")
+                    Text("排名: \(entry.clanInfo!.rank ?? 0)")
+                }
+            default:
+                VStack(alignment: .leading, spacing: nil) {
+                    Text("公会名: \(entry.clanInfo!.clan_name ?? "")")
+                    Text("会长ID: \(entry.clanInfo!.leader_name ?? "")")
+                    Text("伤害: \(entry.clanInfo!.damage ?? 0)")
+                    Text("排名: \(entry.clanInfo!.rank ?? 0)")
+                }
             }
-        default:
-            VStack(alignment: .leading, spacing: nil) {
-                Text("公会名: \(entry.clanInfo.clan_name ?? "")")
-                Text("会长ID: \(entry.clanInfo.leader_name ?? "")")
-                Text("伤害: \(entry.clanInfo.damage ?? 0)")
-                Text("排名: \(entry.clanInfo.rank ?? 0)")
+        } else {
+            VStack(alignment: .leading, spacing: /*@START_MENU_TOKEN@*/nil/*@END_MENU_TOKEN@*/) {
+                Text("发生错误: \(entry.error?.localizedDescription ?? "")")
             }
         }
     }
@@ -139,7 +163,7 @@ struct KyoukaExtension: Widget {
 
 struct KyoukaExtension_Previews: PreviewProvider {
     static var previews: some View {
-        KyoukaExtensionEntryView(entry: KyoukaServiceEntry(date: Date(), clanInfo: KyoukaServiceProvider.lastClanInfo))
+        KyoukaExtensionEntryView(entry: KyoukaServiceEntry(date: Date(), clanInfo: KyoukaServiceProvider.lastClanInfo, error: KyoukaServiceProvider.lastError))
             .previewContext(WidgetPreviewContext(family: .systemSmall))
     }
 }
