@@ -140,7 +140,7 @@ struct KyoukaExtensionEntryView : View {
                 }
             }
         } else {
-            VStack(alignment: .leading, spacing: /*@START_MENU_TOKEN@*/nil/*@END_MENU_TOKEN@*/) {
+            VStack(alignment: .leading, spacing: nil) {
                 Text("发生错误: \(entry.error?.localizedDescription ?? "")")
             }
         }
