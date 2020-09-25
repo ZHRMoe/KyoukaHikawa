@@ -105,11 +105,20 @@ struct KyoukaExtensionEntryView : View {
     @Environment(\.widgetFamily) var family: WidgetFamily
 
     var body: some View {
-        VStack(alignment: .leading, spacing: nil) {
-            Text("ClanName:\(entry.clanInfo.clan_name ?? "")")
-            Text("LeaderName:\(entry.clanInfo.leader_name ?? "")")
-            Text("Damage:\(entry.clanInfo.damage ?? 0)")
-            Text("Rank:\(entry.clanInfo.rank ?? 0)")
+        switch family {
+        case .systemSmall:
+            VStack(alignment: .leading, spacing: nil) {
+                Text("公会名: \(entry.clanInfo.clan_name ?? "")")
+                Text("伤害: \(entry.clanInfo.damage ?? 0)")
+                Text("排名: \(entry.clanInfo.rank ?? 0)")
+            }
+        default:
+            VStack(alignment: .leading, spacing: nil) {
+                Text("公会名: \(entry.clanInfo.clan_name ?? "")")
+                Text("会长ID: \(entry.clanInfo.leader_name ?? "")")
+                Text("伤害: \(entry.clanInfo.damage ?? 0)")
+                Text("排名: \(entry.clanInfo.rank ?? 0)")
+            }
         }
     }
 }
@@ -122,7 +131,7 @@ struct KyoukaExtension: Widget {
         IntentConfiguration(kind: kind, intent: ConfigurationIntent.self, provider: KyoukaServiceProvider()) { entry in
             KyoukaExtensionEntryView(entry: entry)
         }
-        .configurationDisplayName("Kyouka工会战排行")
+        .configurationDisplayName("Kyouka工会战排名")
         .description("查询指定工会排名")
         .supportedFamilies([.systemSmall, .systemMedium, .systemLarge])
     }
