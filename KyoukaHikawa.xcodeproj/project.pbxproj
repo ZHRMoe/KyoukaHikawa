@@ -15,6 +15,7 @@
 		5346FA89251B0D0400E69075 /* KyoukaExtension.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 5346FA85251B0D0300E69075 /* KyoukaExtension.intentdefinition */; };
 		5346FA8A251B0D0400E69075 /* KyoukaExtension.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 5346FA85251B0D0300E69075 /* KyoukaExtension.intentdefinition */; };
 		5346FA8D251B0D0400E69075 /* KyoukaExtensionExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 5346FA7D251B0D0300E69075 /* KyoukaExtensionExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		53D8173325203C6800403C47 /* KHDefaultInfoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D8173225203C6800403C47 /* KHDefaultInfoManager.swift */; };
 		53DFD2DB24D331B8006D5690 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53DFD2DA24D331B8006D5690 /* AppDelegate.swift */; };
 		53DFD2DD24D331B8006D5690 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53DFD2DC24D331B8006D5690 /* SceneDelegate.swift */; };
 		53DFD2DF24D331B8006D5690 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53DFD2DE24D331B8006D5690 /* ViewController.swift */; };
@@ -78,6 +79,7 @@
 		5346FA85251B0D0300E69075 /* KyoukaExtension.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = KyoukaExtension.intentdefinition; sourceTree = "<group>"; };
 		5346FA86251B0D0400E69075 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5346FA88251B0D0400E69075 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		53D8173225203C6800403C47 /* KHDefaultInfoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KHDefaultInfoManager.swift; sourceTree = "<group>"; };
 		53DFD2D724D331B8006D5690 /* KyoukaHikawa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KyoukaHikawa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		53DFD2DA24D331B8006D5690 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		53DFD2DC24D331B8006D5690 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 				53DFD2E824D331B9006D5690 /* Info.plist */,
 				5316291224D3328F00F849F4 /* KHNetwork.swift */,
 				53F82C1024DD36A2005326B1 /* KHClanInfoManager.swift */,
+				53D8173225203C6800403C47 /* KHDefaultInfoManager.swift */,
 				53F82C1224DD3AB4005326B1 /* KyoukaHikawa-Bridging-Header.h */,
 			);
 			path = KyoukaHikawa;
@@ -490,6 +493,7 @@
 			files = (
 				5346FA8A251B0D0400E69075 /* KyoukaExtension.intentdefinition in Sources */,
 				53DFD2DF24D331B8006D5690 /* ViewController.swift in Sources */,
+				53D8173325203C6800403C47 /* KHDefaultInfoManager.swift in Sources */,
 				53F82C1124DD36A2005326B1 /* KHClanInfoManager.swift in Sources */,
 				53DFD2DB24D331B8006D5690 /* AppDelegate.swift in Sources */,
 				53DFD2DD24D331B8006D5690 /* SceneDelegate.swift in Sources */,

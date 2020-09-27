@@ -9,6 +9,8 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 
+let serverHost = "https://service-kjcbcnmw-1254119946.gz.apigw.tencentcs.com/"
+
 class KHNetwork: NSObject {
     
     static let shared = KHNetwork()
@@ -23,8 +25,26 @@ class KHNetwork: NSObject {
         return _request
     }
     
+    func requestDefaultData() {
+        let urlString = serverHost + "/default"
+        let url = URL(string: urlString)!
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = HTTPMethod.get.rawValue
+        request = self.configRequestHeader(request: request)
+        
+        AF.request(request).responseJSON { (responce) in
+            if responce.value != nil {
+                let resultJson = JSON.init(responce.value as Any)
+                KHDefaultInfoManager.processDefaultInfo(json: resultJson)
+            } else {
+                
+            }
+        }
+    }
+    
     func requestDataAtRanking(_ ranking: Int, history: Int = 0) {
-        let urlString = "https://service-kjcbcnmw-1254119946.gz.apigw.tencentcs.com//rank/\(ranking)"
+        let urlString = serverHost + "/rank/\(ranking)"
         let json = "{\"history\":\(history)}"
         let url = URL(string: urlString)!
         let jsonData = json.data(using: .utf8, allowLossyConversion: false)!
@@ -45,7 +65,7 @@ class KHNetwork: NSObject {
     }
     
     func requestDataFromClanName(_ name: String, history: Int = 0) {
-        let urlString = "https://service-kjcbcnmw-1254119946.gz.apigw.tencentcs.com//name/0"
+        let urlString = serverHost + "/name/0"
         let json = "{\"history\":\(history),\"clanName\":\"\(name)\"}"
         let url = URL(string: urlString)!
         let jsonData = json.data(using: .utf8, allowLossyConversion: false)!

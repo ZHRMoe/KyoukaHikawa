@@ -31,7 +31,7 @@ class ViewController: UIViewController {
 
     @objc func dataTest() {
 //        KHNetwork.shared.requestDataAtRanking(1500, history: 0)
-        KHNetwork.shared.requestDataFromClanName("救赎蔷薇")
+        KHNetwork.shared.requestDataFromClanName("救赎蔷薇", history: 0)
     }
 
 }

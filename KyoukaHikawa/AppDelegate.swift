@@ -13,7 +13,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        /// Never Insert
+        if #available(iOS 10, *) {
+            UICollectionView.appearance().isPrefetchingEnabled = false
+        }
+        if #available(iOS 11, *) {
+            UIScrollView.appearance().contentInsetAdjustmentBehavior = .never
+        }
+        
+        /// Network
+        KHNetwork.shared.requestDefaultData()
+        
+        /// Record First Launch
+        if let _ = UserDefaults.standard.object(forKey: "kFirstLaunchDate") as? Date {
+            
+        } else {
+            let curDate = Date()
+            UserDefaults.standard.set(curDate, forKey: "kFirstLaunchDate")
+        }
+        
         return true
     }
 
